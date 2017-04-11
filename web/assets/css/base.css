@@ -1,0 +1,13 @@
+.footer {
+    background-color: #2A2730;
+    color:white;
+    bottom: 0;
+}
+.imgnav {
+
+    float: left;
+    padding-right: 0px;
+    margin-right: 15px;
+    width: 122px;
+
+}

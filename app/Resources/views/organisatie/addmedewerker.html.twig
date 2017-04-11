@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2 class="text-center">Add Medewerker</h2>
+    <div class="jumbotron" style="width:100%;">
+        <form action="/addMedewerkers" method="post">
+            <div class="form-group">
+                <input type="text" id="voornaam" name="voornaam" placeholder="voornaam" class="form-control" required><br>
+                <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="tussenvoegsel" class="form-control"><br>
+                <input type="text" id="achternaam" name="achternaam" placeholder="achternaam" class="form-control" required><br>
+                <input type="email" id="email" name="email" placeholder="email" class="form-control" required><br>
+                <input type="text" id="rol" name="rol" placeholder="rol" class="form-control" required><br>
+                <input type="submit" class="btn btn-secondary">
+            </div>
+        </form>
+    </div>
+{% endblock %}

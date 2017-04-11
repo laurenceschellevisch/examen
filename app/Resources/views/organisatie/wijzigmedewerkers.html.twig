@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2 class="text-center">Wijzig Medewerker</h2>
+    <div class="jumbotron" style="width:100%;">
+        {{ dump(werknemers) }}
+        <form action="/wijzigmedewerkers{{ werknemers.id }}" method="post">
+            <div class="form-group">
+                <input type="text" id="voornaam" name="voornaam" placeholder="voornaam" value="{{ werknemers.voornaam }}" class="form-control" required><br>
+                <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="tussenvoegsel" value="{{ werknemers.tussenvoegsel }}" class="form-control"><br>
+                <input type="text" id="achternaam" name="achternaam" placeholder="achternaam" value="{{ werknemers.achternaam }}" class="form-control" required><br>
+                <input type="email" id="email" name="email" placeholder="email" value="{{ werknemers.email }}" class="form-control" required><br>
+                <input type="text" id="rol" name="rol" placeholder="rol" value="{{ werknemers.rol }}" class="form-control" required><br>
+                <input type="submit" class="btn btn-secondary">
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

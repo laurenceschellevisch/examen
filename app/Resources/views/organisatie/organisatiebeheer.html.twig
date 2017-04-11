@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2 class="text-center">Organisatie beheer</h2>
+    <div class="jumbotron" style="width:100%;">
+
+        <table  class="table table-hover" id="werknemertable">
+            <thead>
+                <tr>
+                    <th>Voornaam</th>
+                    <th>Tussenvoegsel</th>
+                    <th>Achternaam</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>Beheer</th>
+                </tr>
+            </thead>
+        <tbody>
+        <script>
+            function myConfirm() {
+                var r = confirm("Are you sure to delete medewerker?");
+
+                if (r == false) {
+                    event.preventDefault();
+                }
+            }
+        </script>
+    {% if werknemers is defined %}
+        {% for items in werknemers %}
+            <tr>
+                <td>{{ items.voornaam }}</td>
+                <td>{{ items.tussenvoegsel }}</td>
+                <td>{{ items.achternaam }}</td>
+                <td>{{ items.email }}</td>
+                <td>{{ items.rol }}</td>
+                <td>
+                    <a href="/wijzigmedewerkerpage{{ items.id }}"><i class="fa fa-pencil alert-info" style="font-size:20px;margin-right:5px" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+        </tbody>
+        </table>
+        <br>
+        <a href="/delete{{ items.id }}"><i class="fa fa-times alert-danger" style="font-size:20px;margin-right:5px" aria-hidden="true" onclick="myConfirm()"></i></a>
+        <a class="btn btn-secondary" href="/addmedewerker">addmedewerker</a>
+
+    </div>
+{% endblock %}
